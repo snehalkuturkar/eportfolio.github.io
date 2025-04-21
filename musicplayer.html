@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1,shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="stylesheet" href="bootstrap.css">
+	<link rel="stylesheet" href="css\fontawesome.css">
+	<link rel="stylesheet" href="css\solid.css">
+	<style type="text/css">
+	body
+	{
+	background-color:black;
+	}
+	#sss
+	{
+	height:250px;
+	width:347px;
+	}
+
+	button
+	{
+	height:35px;
+	width:40px;
+	background-color:white;
+	outline:none;
+	border:none;
+
+	}
+	</style>
+	</head>
+
+	<body>
+	<h1 class="text-center text-white mt-3">Audio Music Player</h4>
+	<div class="container mt-5">
+	<div class="row justify-content-center">
+	<div class="col-md-4">
+	<div class="card">
+	<img class="card-img-top" id="sss" src="music1.jpg">
+	<div class="card-body">
+    <i onclick="prevTrack()" class="fa-solid fa-backward float-left ml-5 prev-track" style="font-size:30px;color:black"></i>
+    <button onclick="playpausetrack()" class="ml-5" id="ppp"><i class="fa-solid fa-circle-play" style="font-size:30px;color:black"></i></button>
+    <i onclick="nextTrack()" class="fa-solid fa-forward float-right mr-5 next-track"  style="font-size:30px;color:black"></i>
+
+<div class="slidecontainer">
+  <div class="current-time">00:00</div>
+  <input type="range" min="1" max="100"
+    value="0" class="seek_slider mt-4" style="width:100%;" onchange="seekTo()">
+    <div class="total-duration">00:00</div>
+</div>
+
+<div class="slider_container">
+      <i class="fa fa-volume-down ml-5"></i>
+      <input type="range" min="1" max="100"
+        value="99" class="volume_slider mt-3" onchange="setVolume()">
+      <i class="fa fa-volume-up"></i>
+    </div>
+
+    <div class="details mt-4">
+      <div class="now-playing">PLAYING x OF y</div>
+          <h4 class="track-name">Track Name</h4>
+
+        </div>
+
+</div>
+
+</div>
+	</div>
+	</div>
+	</div>
+
+	<script type="text/javascript">
+
+
+  let playpause_btn = document.getElementById("ppp");
+  let seek_slider = document.querySelector(".seek_slider");
+  let volume_slider = document.querySelector(".volume_slider");
+  let track_name = document.querySelector(".track-name");
+  let curr_track = document.createElement('audio');
+  let next_btn = document.querySelector(".next-track");
+let prev_btn = document.querySelector(".prev-track");
+let now_playing = document.querySelector(".now-playing");
+let curr_time = document.querySelector(".current-time");
+let total_duration = document.querySelector(".total-duration");
+
+let track_index = 0;
+let isPlaying = false;
+let updateTimer;
+
+
+let track_list = [
+  {
+    name: "Deva Shree Ganesha",
+    path: "ganesh.mp3"
+  },
+  {
+    name: "Bhaghawadhari",
+    path: "Bhagwadhari.mp3"
+  },
+  {
+    name: "Kejo Kesari Ke Laal",
+    path: "ram.mp3"
+  },
+];
+
+function loadTrack(track_index) {
+  // Clear the previous seek timer
+  clearInterval(updateTimer);
+  resetValues();
+
+  // Load a new track
+  curr_track.src = track_list[track_index].path;
+  curr_track.load();
+  track_name.textContent = track_list[track_index].name;
+  now_playing.textContent =
+     "PLAYING " + (track_index + 1) + " OF " + track_list.length;
+
+
+  updateTimer = setInterval(seekUpdate, 1000);
+
+  curr_track.addEventListener("ended", nextTrack);
+
+
+}
+
+function resetValues() {
+  curr_time.textContent = "00:00";
+   total_duration.textContent = "00:00";
+  seek_slider.value = 0;
+}
+
+loadTrack(track_index);
+
+  function playpausetrack() {
+    if (!isPlaying) playTrack();
+    else pauseTrack();
+  }
+
+  function playTrack() {
+
+    curr_track.play();
+    isPlaying = true;
+   playpause_btn.innerHTML ='<i class="fa-sharp fa-solid fa-circle-pause" style="font-size:30px;color:black"></i>';
+  }
+
+  function pauseTrack() {
+
+  curr_track.pause();
+  isPlaying = false;
+
+  playpause_btn.innerHTML ='<i class="fa-solid fa-circle-play" style="font-size:30px;color:black"></i>';
+}
+
+function nextTrack() {
+  // Go back to the first track if the
+  // current one is the last in the track list
+  if (track_index < track_list.length - 1)
+    track_index += 1;
+  else track_index = 0;
+
+  // Load and play the new track
+  loadTrack(track_index);
+  playTrack();
+}
+
+function prevTrack() {
+  // Go back to the last track if the
+  // current one is the first in the track list
+  if (track_index > 0)
+    track_index -= 1;
+  else track_index = track_list.length - 1;
+
+  // Load and play the new track
+  loadTrack(track_index);
+  playTrack();
+}
+
+function seekTo() {
+  seekto = curr_track.duration * (seek_slider.value / 100);
+  curr_track.currentTime = seekto;
+}
+
+function setVolume() {
+
+  curr_track.volume = volume_slider.value / 100;
+}
+
+
+function seekUpdate() {
+  let seekPosition = 0;
+
+  if (!isNaN(curr_track.duration)) {
+    seekPosition = curr_track.currentTime * (100 / curr_track.duration);
+
+    seek_slider.value = seekPosition;
+
+    let currentMinutes = Math.floor(curr_track.currentTime / 60);
+    let currentSeconds = Math.floor(curr_track.currentTime - currentMinutes * 60);
+    let durationMinutes = Math.floor(curr_track.duration / 60);
+    let durationSeconds = Math.floor(curr_track.duration - durationMinutes * 60);
+
+    if (currentSeconds < 10) { currentSeconds = "0" + currentSeconds; }
+    if (durationSeconds < 10) { durationSeconds = "0" + durationSeconds; }
+    if (currentMinutes < 10) { currentMinutes = "0" + currentMinutes; }
+    if (durationMinutes < 10) { durationMinutes = "0" + durationMinutes; }
+
+    curr_time.textContent = currentMinutes + ":" + currentSeconds;
+    total_duration.textContent = durationMinutes + ":" + durationSeconds;
+  }
+}
+
+	</script>
+	</body>
+	</html>

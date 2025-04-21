@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1,shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css\fontawesome.css">
+  	<link rel="stylesheet" href="css\brands.css">
+  	<link rel="stylesheet" href="css\solid.css">
+    <link rel="stylesheet" href="bootstrap.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<style>
+#ten
+{
+  position: relative;
+}
+
+#inside
+{
+  height:400px;
+  width:540px;
+  opacity:0;
+  position:absolute;
+  top:10;
+  left:10;
+  bottom:10;
+  right:10;
+  background-color:black;
+
+}
+#inside:hover{
+  opacity:0.8;
+
+}
+#max{
+  position: relative;
+  overflow:hidden;
+}
+#slidel
+{
+  position: absolute;
+  background-color:rgba(255,0,0,0.7);
+  height:100%;
+  width:100%;
+  top:0;
+  right:0;
+  left:-100%;
+  bottom:0;
+  transition:all 0.5s;
+
+}
+#max:hover #slidel
+{
+  left:0;
+}
+
+#sea{
+  position: relative;
+  overflow: hidden;
+}
+
+#fish
+{
+  position:absolute;
+  background-color:rgba(0,0,0,0.5);
+  bottom:0;
+  top:-80%;
+  width:100%;
+  height:100%;
+  transition: all 0.5s;
+
+}
+#sea:hover #fish
+{
+
+top:0;
+}
+
+.cards {
+  position: relative;
+  width: 500px;
+  height:200px;
+  border-radius: 10px;
+  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.5);
+  transition: 0.3s;
+  padding: 30px 50px;
+  background: #fff;
+  cursor: pointer;
+  margin-right: 30px;
+}
+
+.cards:hover {
+  height: 400px;
+}
+
+.imgbox {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform: translateY(-80px);
+  z-index: 99;
+}
+
+img {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.5);
+}
+
+.content {
+  padding: 10px 20px;
+  text-align: center;
+  transform: translateY(-450px);
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.cards:hover > .content {
+  opacity: 1;
+  transform: translateY(-180px);
+}
+
+.content h2 {
+  color: #7f9ead;
+}
+
+.addition {
+        margin-left: 35%;
+        margin-top: 10%;
+    }
+
+    .slideshow {
+        position: centre;
+        margin: 0 auto;
+        padding-top: 50px;
+        height: 250px;
+        background-color:white;
+        box-sizing: border-box;
+    }
+
+    .content1 {
+        margin: auto;
+        width: 190px;
+        perspective: 1000px;
+        position: relative;
+        padding-top 80px;
+    }
+
+    .content1-carrousel {
+        padding-left: 40px;
+
+        /* This helps to rotate the
+        photo div with respest to
+        axis of an another circle */
+        width: 100%;
+        position: absolute;
+        float: right;
+        animation: rotar 15s infinite linear;
+        transform-style: preserve-3d;
+    }
+
+    .content1-carrousel:hover {
+
+        /* This is a hover effect.
+        when the mouse will reach
+        on the photo, the photo
+        will stop moving */
+        animation-play-state: paused;
+        cursor: pointer;
+    }
+
+    .content1-carrousel figure {
+
+        /* width of the full image div*/
+        width: 100%;
+
+        /* height of the full image div*/
+        height: 120px;
+        border: 1px solid #4d444d;
+        overflow: hidden;
+        position: absolute;
+    }
+
+    /* The calculation part starts for the angle.
+    first, take the number of photos and then divide
+    by 360 and write it in the position of degree */
+
+    .content1-carrousel figure:nth-child(1) {
+        transform: rotateY(0deg) translateZ(300px);
+    }
+
+    .content1-carrousel figure:nth-child(2) {
+        transform: rotateY(60deg) translateZ(300px);
+    }
+
+    .content1-carrousel figure:nth-child(3) {
+        transform: rotateY(120deg) translateZ(300px);
+    }
+
+    .content1-carrousel figure:nth-child(4) {
+        transform: rotateY(180deg) translateZ(300px);
+    }
+
+    .content1-carrousel figure:nth-child(5) {
+        transform: rotateY(240deg) translateZ(300px);
+    }
+
+    .content1-carrousel figure:nth-child(6) {
+        transform: rotateY(300deg) translateZ(300px);
+    }
+
+    .content1-carrousel figure:nth-child(7) {
+        transform: rotateY(360deg) translateZ(300px);
+    }
+
+    .slideshow {
+        position: absolute;
+        box-shadow: 0px 0pz 20px 0px #000;
+        border-radius: 2px;
+    }
+
+    .content1-carrousel img {
+        image-rendering: auto;
+
+        /* The photo will move
+        with this velocity */
+        transition: all 300ms;
+
+        /* width of the photo */
+        width: 100%;
+
+        /* height of the photo */
+        height: 100%;
+    }
+
+    .content1-carrousel img:hover {
+        transform: scale(1.2);
+        transition: all 300ms;
+    }
+
+    @keyframes rotar {
+        from {
+            transform: rotateY(0deg);
+        }
+
+        to {
+            transform: rotateY(360deg);
+        }
+    }
+</style>
+
+	</head>
+
+  <body>
+    <div class="container-fluid">
+      <h1 class="text-center mt-3">Image Gallary</h1>
+      <div class="row">
+        <div class="col-3">
+          <ul class="nav nav-tabs flex-column">
+            <li class="nav-item">
+              <a class="nav-link active" data-toggle="tab" href="sim"><h2 style="color:magenta;">Simple Slide Show</h2></a></li>
+                <li class="nav-item">
+                  <a class="nav-link" data-toggle="tab" href="#gal"><h2 style="color:magenta;">Image Gallary</h2></a></li>
+                    <li class="nav-item">
+                      <a class="nav-link" data-toggle="tab" href="#eff"><h2 style="color:magenta;">Image Effect</h2></a></li>
+                        <li class="nav-item">
+                          <a class="nav-link" data-toggle="tab" href="#rol"><h2 style="color:magenta;">Photo Sliding effect </h2></a></li>
+
+            </ul>
+
+        </div>
+        <div class="col-9">
+          <br>
+        <div class="tab-content">
+        <div class="tab-pane fade show active" id="sim">
+          <div class="row">
+            <div class="col-md-10">
+          <div id="demo" class="carousel slide" data-ride="carousel">
+
+            <!-- Indicators -->
+            <ul class="carousel-indicators">
+              <li data-target="#demo" data-slide-to="0" class="active"></li>
+              <li data-target="#demo" data-slide-to="1"></li>
+              <li data-target="#demo" data-slide-to="2"></li>
+              <li data-target="#demo" data-slide-to="3"></li>
+            </ul>
+
+            <!-- The slideshow -->
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="1.jpg" class="d-block w-100" style="border-radius:20px;">
+              </div>
+              <div class="carousel-item">
+                <img src="2.jpg" class="d-block w-100" style="border-radius:20px;" >
+
+              </div>
+              <div class="carousel-item">
+                <img src="3.jpg" class="d-block w-100" style="border-radius:20px;">
+              </div>
+              <div class="carousel-item">
+                <img src="4.jpg" class="d-block w-100" style="border-radius:20px;">
+              </div>
+            </div>
+
+            <!-- Left and right controls -->
+            <a class="carousel-control-prev" href="#demo" data-slide="prev">
+              <span class="carousel-control-prev-icon"></span>
+            </a>
+            <a class="carousel-control-next" href="#demo" data-slide="next">
+              <span class="carousel-control-next-icon"></span>
+            </a>
+
+          </div>
+        </div>
+      </div>
+</div>
+
+<div class="tab-pane fade"  id="gal">
+<div class="row">
+<div class="col-md-4">
+<img src="galaxy.jpg" class="d-block w-100 img-thumbnail">
+</div>
+<div class="col-md-4">
+<img src="glass.jpg" class="d-block w-100 img-thumbnail">
+</div>
+<div class="col-md-4">
+<img src="laptop.jpg" class="d-block w-100 img-thumbnail">
+</div>
+</div>
+
+<div class="row">
+<div class="col-md-4">
+<img src="mobile.jpg" class="d-block w-100 mt-3 img-thumbnail">
+</div>
+<div class="col-md-4">
+<img src="music2.jpg" class="d-block w-100 mt-3 img-thumbnail">
+</div>
+<div class="col-md-4">
+<img src="planet.jpg" class="d-block w-100 mt-3 img-thumbnail">
+</div>
+</div>
+</div>
+
+
+<div class="tab-pane fade"  id="eff">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="card mb-3" id="ten">
+      <img src="flower.jpg" class="card-img-top" style="height:400px;">
+      <div class="card-img-overlay" id="inside">
+        <h3 class="text-center text-white mt-5">Dahlia</h3>
+        <p class="text-white">Dahlias are perennial plants with tuberous roots, though they are grown as annuals in some regions with cold winters. While some have herbaceous stems, others have stems which lignify in the absence of secondary tissue and resprout following winter dormancy, allowing further seasons of growth.</p>
+        <button type="button" class="btn btn-primary">Read More</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-6">
+    <div class="card mb-3" id="max">
+    <img src="tiger.jpg" class="card-img-top" style="height:400px;">
+    <div class="card-img-overlay" id="slidel">
+<p class="text-white mt-5" style="font-size:20px;">The white Bengal tigers are distinctive due to the color of their fur. The white fur is caused by a lack of the pigment pheomelanin,
+        which is found in Bengal tigers with orange color fur. When compared to Bengal tigers,
+        the white Bengal tigers tend to grow faster and heavier than the orange Bengal tiger. They also tend to be somewhat bigger at birth, and as fully grown adults.</p>
+</div>
+  </div>
+</div>
+</diV>
+
+<div class="row">
+  <div class="col-md-6">
+    <div class="card mb-3" id="sea">
+    <img src="dolphin.jpg" class="card-img-top">
+    <div class="card-img-overlay" id="fish">
+    <p class="mt-4" style="font-size:20px;color:white;">A dolphin is an aquatic mammal within the infraorder Cetacea. Dolphin species belong to the families Delphinidae (the oceanic dolphins), Platanistidae (the Indian river dolphins), Iniidae (the New World river dolphins),
+   Pontoporiidae (the brackish dolphins), and possibly extinct Lipotidae (baiji or Chinese river dolphin). There are 40 extant species named as dolphins.</p>
+<h3 class="text-center text-white">Dolphin</h3>
+</div>
+  </div>
+</div>
+
+
+  <div class="col-md-6 mt-5">
+    <div class="cards">
+          <div class="imgbox">
+            <img
+              src="gold.jpg"/>
+          </div>
+
+          <div class="content">
+            <h2>Golden Temple</h2>
+            <p>
+              The Golden Temple (also known as the Harmandir Sahib (lit. 'House of God', or the Darbār Sahib,
+                 is a gurdwara located in the city of Amritsar, Punjab, India.
+                 It is the pre-eminent spiritual site of Sikhism. It is one of the holiest sites in Sikhism, alongside the Gurdwara Darbar Sahib Kartarpur in Kartarpur, and Gurdwara Janam Asthan in Nankana Sahib.
+
+            </p>
+          </div>
+        </div>
+</div>
+
+
+
+
+      </div>
+    </div>
+
+
+    <div class="tab-pane fade"  id="rol">
+      <div class="addition">
+          <section class="slideshow">
+              <div class="content1">
+                  <div class="content1-carrousel">
+                      <figure class="shadow">
+                          <img src="apple.jpg">
+                      </figure>
+                      <figure class="shadow">
+                          <img src="mango.jpg">
+                      </figure>
+                      <figure class="shadow">
+                          <img src="orange.jpg">
+                      </figure>
+                      <figure class="shadow">
+                          <img src="berry.jpg">
+                      </figure>
+                      <figure class="shadow">
+                          <img src="grapes.jpg">
+                      </figure>
+                      <figure class="shadow">
+                          <img src="pomo.jpg">
+                      </figure>
+                  </div>
+              </div>
+          </section>
+      </div>
+
+
+
+    </div>
+<script type="text/javascript">
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

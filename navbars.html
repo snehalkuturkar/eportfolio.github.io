@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1,shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="stylesheet" href="bootstrap.css">
+  <link rel="stylesheet" href="css\fontawesome.css">
+	<link rel="stylesheet" href="css\solid.css">
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<style>
+#header{
+  background-color: #ee5253;
+  width:100%;
+  height:60px;
+}
+
+
+</style>
+
+	</head>
+
+	<body>
+	<div class="container-fluid">
+    <h1 class="text-center mt-3">Navigation Bar</h1>
+    <div class="row">
+      <div class="col-3">
+        <ul class="nav nav-tabs flex-column">
+          <li class="nav-item">
+            <a class="nav-link active" data-toggle="tab" href="#icon"><h4 style="color:#0A174E;">Icon Bar</h4></a></li>
+              <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#menu"><h4 style="color:#0A174E;">Menu Icon Bar</h4></a></li>
+                  <li class="nav-item">
+                    <a class="nav-link" data-toggle="tab" href="#acc"><h4 style="color:#0A174E;">Accordion</h4></a></li>
+                      <li class="nav-item">
+                        <a class="nav-link" data-toggle="tab" href="#sea"><h4 style="color:#0A174E;">Search Bar</h4></a></li>
+                          <li class="nav-item">
+                            <a class="nav-link" data-toggle="tab" href="#drop"><h4 style="color:#0A174E;">dropdown Menu Bar</h4></a></li>
+                              <li class="nav-item">
+                                <a class="nav-link" data-toggle="tab" href="#sim"><h4 style="color:#0A174E;">Simple Menu Bar</h4></a></li>
+                                  <li class="nav-item">
+                                    <a class="nav-link" data-toggle="tab" href="#pil"><h4 style="color:#0A174E;">Pill Nav Bar</h4></a></li>
+                                      <li class="nav-item">
+                                        <a class="nav-link" data-toggle="tab" href="#side"><h4 style="color:#0A174E;">Side Nav Bar</h4></a></li>
+          </ul>
+
+      </div>
+      <div class="col-9">
+      <br>
+
+      <div class="tab-content">
+      <div class="tab-pane fade show active" id="icon">
+      <ul class="nav" style="background-color:#284b6f;">
+      <li class="nav-item"><a class="nav-link" href="#" style="color:white;"><i class="fa-solid fa-home"style="font-size:25px;"></i></a></li>
+      <li class="nav-item"><a class="nav-link" href="#" style="color:white;"><i class="fa-solid fa-search"style="font-size:25px;"></i></a> </li>
+      <li class="nav-item"><a class="nav-link" href="#" style="color:white;"><i class="fa-solid fa-globe"style="font-size:25px;"></i></a></li>
+      <li class="nav-item"><a class="nav-link" href="#" style="color:white;"><i class="fa-solid fa-envelope"style="font-size:25px;"></i></a></li>
+      <li class="nav-item"><a class="nav-link" href="#" style="color:white;"><i class="fa-solid fa-trash"style="font-size:25px;"></i></a></li>
+      <li class="nav-item"><a class="nav-link" href="#" style="color:white;"><i class="fa-solid fa-user"style="font-size:25px;"></i></a></li>
+      </ul>
+      </div>
+
+
+<br>
+      <div class="tab-pane fade" id="menu">
+      <ul class="nav" style="background-color:#8c4d06;">
+      <li class="nav-item"><a class="nav-link" href="#" style="color:white;"><i class="fa-solid fa-home"></i> Home</a></li>
+      <li class="nav-item"><a class="nav-link" href="#" style="color:white;"><i class="fa-solid fa-envelope"></i> Contact</a></li>
+      <li class="nav-item"><a class="nav-link" href="#" style="color:white;"><i class="fa-solid fa-user"></i> Login</a></li>
+      </ul>
+      </div>
+
+<br>
+      <div class="tab-pane fade" id="acc">
+        <div class="accordion" id="accordionExample">
+                      <div class="card">
+                          <div class="card-header" style="background-color:red;">
+                              <button class="btn btn-block text-left" data-toggle="collapse" data-target="#collapseOne"><h3 style="color:white;">HTML</h3></button>
+                          </div>
+
+                          <div id="collapseOne" class="collapse show" data-parent="#accordionExample">
+                              <div class="card-body">
+                                The HyperText Markup Language or HTML is the standard markup language for documents designed to be displayed in a web browser. It defines the meaning and structure of web content. It is often assisted by technologies such as Cascading Style Sheets (CSS) and scripting languages such as JavaScript.
+Web browsers receive HTML documents from a web server or from local storage and render the documents into multimedia web pages. HTML describes the structure of a web page semantically and originally included cues for its appearance.
+                              </div>
+                          </div>
+                      </div>
+
+                      <div class="card">
+                        <div class="card-header" style="background-color:brown;">
+                            <button class="btn btn-block text-left collapsed" data-toggle="collapse" data-target="#collapseTwo"><h3 style="color:white;">CSS</h3></button>
+                        </div>
+
+                        <div id="collapseTwo" class="collapse" data-parent="#accordionExample">
+                            <div class="card-body">
+                              Cascading Style Sheets (CSS) is a style sheet language used for describing the presentation of a document written in a markup language such as HTML or XML (including XML dialects such as SVG, MathML or XHTML).[1] CSS is a cornerstone technology of the World Wide Web, alongside HTML and JavaScript.[2]
+CSS is designed to enable the separation of content and presentation, including layout, colors, and fonts.[3] This separation can improve content accessibility; provide more flexibility and control in the specification of presentation characteristics; enable multiple web pages to share formatting by specifying the relevant CSS in a separate .css file, which reduces complexity and repetition in the structural content; and enable the .css file to be cached to improve the page load speed between the pages that share the file and its formatting.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header" style="background-color:orange;">
+                            <button class="btn  btn-block text-left collapsed" data-toggle="collapse" data-target="#collapseThree"><h3 style="color:white;">Bootstrap</h3></button>
+                        </div>
+
+                        <div id="collapseThree" class="collapse" data-parent="#accordionExample">
+                            <div class="card-body">
+                                Bootstrap is an HTML, CSS and JS library that focuses on simplifying the development of informative web pages (as opposed to web applications). The primary purpose of adding it to a web project is to apply Bootstrap's choices of color, size, font and layout to that project. As such, the primary factor is whether the developers in charge find those choices to their liking. Once added to a project, Bootstrap provides basic style definitions for all HTML elements. The result is a uniform appearance for prose, tables and form elements across web browsers. In addition, developers can take advantage of CSS classes defined in Bootstrap to further customize the appearance of their contents. For example, Bootstrap has provisioned for light- and dark-colored tables, page headings, more prominent pull quotes, and text with a highlight.
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+
+</div>
+
+
+
+<br>
+      <div class="tab-pane fade" id="sea">
+        <nav class="navbar navbar-expand-md  navbar-dark" style="background:#F5275A;">
+          <a class="navbar-brand"><img src="Hydra.jpg" class="img-fluid" heigth="50px" width="50px"></a>
+
+          <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#aaa">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="aaa">
+      	<ul class="navbar-nav">
+      	<li class="nav-item"><a class="nav-link" href="#" style="color:white;">Home</a></li>
+      	<li class="nav-item"><a class="nav-link" href="#" style="color:white;">About Us</a> </li>
+      	<li class="nav-item"><a class="nav-link" href="#" style="color:white;">Gallary</a></li>
+      	</ul>
+
+
+        <form class="form-inline">
+          <input class="form-control mr-sm-2" type="search" placeholder="search">
+          <button type="button" class="btn-dark my-sm-0">search</button>
+        </form>
+     </div>
+   </nav>
+    </div>
+
+
+
+
+
+
+<br>
+      	<div class="tab-pane fade" id="drop">
+      	<ul class="nav" style="background-color:#31dbd0;">
+      	<li class="nav-item"><a class="nav-link" href="#" style="color:black;font-weight:bold;">Home</a></li>
+      	<li class="nav-item dropdown"><a class="nav-link dropdown-toggle" data-toggle="dropdown" href="" style="color:black;font-weight:bold;">About Us</a>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="">Link 1</a>
+          <a class="dropdown-item" href="">Link 2</a>
+          <a class="dropdown-item" href="">Link 3</a>
+          <a class="dropdown-item" href="">Link 4</a>
+      </div>
+      </li>
+      	<li class="nav-item"><a class="nav-link" href="#" style="color:black;font-weight:bold;">Gallary</a></li>
+      	</ul>
+
+      </div>
+
+
+<br>
+	<div class="tab-pane fade" id="sim">
+	<ul class="nav" style="background-color:#543289;">
+	<li class="nav-item"><a class="nav-link" href="#" style="color:white;">Home</a></li>
+	<li class="nav-item"><a class="nav-link" href="#" style="color:white;">About Us</a> </li>
+	<li class="nav-item"><a class="nav-link" href="#" style="color:white;">Gallary</a></li>
+	</ul>
+	</div>
+
+
+
+    <div class="tab-pane fade" id="pil">
+	<ul class="nav nav-pills">
+	<li class="nav-item"><a class="nav-link active" href="#" style="color:black;font-weight:bold;">Home</a></li>
+	<li class="nav-item"><a class="nav-link" href="#" style="color:black;font-weight:bold;">About Us</a> </li>
+	<li class="nav-item"><a class="nav-link" href="#" style="color:black;font-weight:bold;">Gallary</a></li>
+	</ul>
+	</div>
+
+
+
+<div class="tab-pane fade" id="side">
+  <ul class="nav navbar-nav flex-column" style="background-color:#2e86de;">
+  <li class="nav-item"><a class="nav-link active" href="#" style="color:white;font-weight:bold;">Home</a></li>
+  <li class="nav-item"><a class="nav-link" href="#" style="color:white;font-weight:bold;">About Us</a> </li>
+  <li class="nav-item"><a class="nav-link" href="#" style="color:white;font-weight:bold;">Gallary</a></li>
+  <li class="nav-item"><a class="nav-link" href="#" style="color:white;font-weight:bold;">Product</a></li>
+  <li class="nav-item"><a class="nav-link" href="#" style="color:white;font-weight:bold;">Contact Us</a></li>
+  </ul>
+
+
+  <p>Cascading Style Sheets (CSS) is a style sheet language used for describing the presentation of a document written in a markup language such as HTML or XML (including XML dialects such as SVG, MathML or XHTML).[1] CSS is a cornerstone technology of the World Wide Web, alongside HTML and JavaScript.[2]
+CSS is designed to enable the separation of content and presentation, including layout, colors, and fonts.[3] This separation can improve content accessibility; provide more flexibility and control in the specification of presentation characteristics; enable multiple web pages to share formatting by specifying the relevant CSS in a separate .css file, which reduces complexity and repetition in the structural content; and enable the .css file to be cached to improve the page load speed between the pages that share the file and its formatting.Cascading Style Sheets (CSS) is a style sheet language used for describing the presentation of a document written in a markup language such as HTML or XML (including XML dialects such as SVG, MathML or XHTML).[1] CSS is a cornerstone technology of the World Wide Web, alongside HTML and JavaScript.[2]
+CSS is designed to enable the separation of content and presentation, including layout, colors, and fonts.[3] This separation can improve content accessibility; provide more flexibility and control in the specification of presentation characteristics; enable multiple web pages to share formatting by specifying the relevant CSS in a separate .css file, which reduces complexity and repetition in the structural content; and enable the .css file to be cached to improve the page load speed between the pages that share the file and its formatting.</p>
+
+	</div>
+
+
+
+
+
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	</div>
+	</body>
+	</html>

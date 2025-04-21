@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glassmorphism + Dark Mode Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css\fontawesome.css">
+  	<link rel="stylesheet" href="css\brands.css">
+  	<link rel="stylesheet" href="css\solid.css">
+    <link rel="stylesheet" href="bootstrap.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <script>
+   $(document).ready(function(){
+   $("#myTab a").on('click',function(e){
+   e.preventDefault();
+   $(this).tab('show');
+   });
+   });
+   </script>
+    <style>
+
+:root {
+    --bg-color: #f0f0f0;
+    --text-color: #000;
+    --glass-bg: rgba(255, 255, 255, 0.2);
+    --glass-border: rgba(255, 255, 255, 0.4);
+}
+
+/* Dark Mode */
+.dark-mode {
+    --bg-color: #121212;
+    --text-color: #fff;
+    --glass-bg: rgba(255, 255, 255, 0.1);
+    --glass-border: rgba(255, 255, 255, 0.2);
+
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background 0.3s ease-in-out;
+}
+.glass-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: background 0.3s ease-in-out, border 0.3s ease-in-out;
+
+}
+
+#aaa
+{
+  background:orange;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid var(--glass-border);
+  border-radius: 15px;
+  padding:5px;
+  text-align:center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width:160px;
+  display: inline-block;
+  transition: background 0.3s ease-in-out, border 0.3s ease-in-out;
+}
+#theme-toggle {
+    top: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    background: var(--glass-bg);
+    color: var(--text-color);
+    border-radius: 10px;
+    transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+#theme-toggle:hover {
+    background: var(--glass-border);
+}
+.abc
+{
+  color:white;
+  font-weight: bold;
+}
+.abc:hover
+{
+  color:orange;
+}
+a
+{color: var(--text-color);font-weight: bold;}
+a:hover{color:orange;}
+#home{
+padding-top:90px;
+height:650px;
+}
+#about{
+  padding-top:100px;
+  height:auto;
+
+}
+#service{
+  padding-top: 100px;
+  height:auto;
+  }
+  #contact
+  {
+    padding-top: 100px;
+    height:auto;
+  }
+#one
+{
+  background: var(--glass-bg);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid var(--glass-border);
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: background 0.3s ease-in-out, border 0.3s ease-in-out;
+}
+#one:hover{background:var(--glass-bg);
+box-shadow:10px 10px 15px orange;}
+#two
+{
+  background: var(--glass-bg);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid var(--glass-border);
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: background 0.3s ease-in-out, border 0.3s ease-in-out;
+}
+#two:hover{background:var(--glass-bg);
+box-shadow:10px 10px 15px orange;}
+#three
+{
+  background: var(--glass-bg);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid var(--glass-border);
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: background 0.3s ease-in-out, border 0.3s ease-in-out;
+}
+#three:hover{background:var(--glass-bg);
+box-shadow:10px 10px 15px orange;}
+.center
+{
+  display: flex;
+  justify-content:right;
+  align-items: center;
+  margin-top:20px;
+}
+
+    </style>
+</head>
+<div class="center">
+<button id="theme-toggle">Toggle Dark Mode</button>
+</div>
+<body>
+<div class="container mb-3 glass-card">
+  <nav id="myNavbar"  class="navbar navbar-expand-sm bg-dark  sticky-top">
+          <a class="navbar-brand"><h1 style="color:orange;font-weight:bolder;">SK</h1></a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+<div class="collapse navbar-collapse justify-content-end" id="collapsibleNavbar">
+          <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link abc" href="#home">Home</a></li>
+        <li class="nav-item"><a class="nav-link abc" href="#about">About Me</a></li>
+        <li class="nav-item"><a class="nav-link abc" href="#service">Service</a></li>
+        <li class="nav-item"><a class="nav-link abc" href="#project">My Work</a></li>
+        <li class="nav-item"><a class="nav-link abc" href="#contact">contact</a></li>
+        </ul>
+      </div>
+        </nav>
+<div id="home">
+ <div class="row">
+<div class="col-md-6">
+<h1>Hello,</h1>
+<h2>My name is<span style="color:orange;"><b> Snehal Kunturkar</span></b></h2>
+<h3>I’m a  web designer lives in Pune, India.<br>I make responsive web design using Bootstrap and Figma.</h3>
+     <h5>Connect me at:</h5>
+      <a href="https://x.com/home"><button type="button" class="btn"><img src="twitter.png" height="30px" width="30px" class="img-fluid"></button></a>
+      <a href="https://www.linkedin.com/in/snehal-kunturkar123/"><button type="button" class="btn"><img src="linkedin.png" height="30px" width="30px" class="img-fluid"></button></a>
+      <button type="button" class="btn"><img src="github.png" height="30px" width="30px" class="img-fluid"></button>
+      <div id="aaa"><a href="SNEHAL KUNTURKAR.docx"><b style="color:white;">Download CV</b></a></div>
+
+  </div>
+  <div class="col-md-6">
+    <img src="one.jpg" class="img-fluid rounded-circle">
+  </div>
+</div>
+</div>
+
+<div id="about">
+<div class="row">
+  <div class="col-md-6">
+    <h1 class="text-center">My <span style="color:orange;">Skills</span></h1>
+    <img src="html.png" height="40px" width="40px" class="img-fluid">
+    <div class="progress mb-3 mt-2">
+        <div class="progress-bar bg-primary" style="width:90%;color:white;">90%</div>
+      </div>
+        <img src="css.png" height="40px" width="40px" class="img-fluid">
+        <div class="progress mb-3 mt-2">
+        <div class="progress-bar   bg-success" style="width:70%">70%</div>
+      </div>
+      <img src="js.png" height="40px" width="40px" class="img-fluid">
+      <div class= "progress mb-3 mt-2">
+        <div class="progress-bar   bg-danger" style="width: 60%">60%</div>
+    </div>
+    <img src="bootstrap.png" height="40px" width="40px" class="img-fluid">
+    <div class="progress mb-3 mt-2">
+        <div class="progress-bar  bg-warning" style="width: 80%">
+            80%
+        </div>
+    </div>
+    <img src="figma.png" height="40px" width="40px" class="img-fluid">
+    <div class="progress mb-3 mt-2">
+        <div class="progress-bar  bg-info" style="width: 50%">
+            50%
+        </div>
+    </div>
+  </div>
+<div class="col-md-6">
+  <h1 class="text-center">About <span style="color:orange;">Me</span></h1>
+  <p style="font-family:roboto style;font-size:20px;">I'm a passionate and creative Web Designer.I strive to craft visually appealing and functional designs that enhance user experience.<br>
+    I am focused on building modern, responsive, and intuitive websites while continuously learning and improving my skills in UI/UX design.<br>
+I belive that a well designed website should not only look visually beautiful but also provide a smmoth and enjoyable interaction for visitors.<br>
+Currently, I am searching opportunities where I can apply my skills, grow as a designer, and contribute to impactful digital experiences. Let's connect and create something amazing!
+</div>
+</div>
+</div>
+
+<div id="service">
+<h1 class="text-center">What I <span style="color:orange;">Offer</span></h1>
+<div class="row">
+<div class="col-md-4">
+    <div class="card mt-3" id="one">
+      <i class="fa-solid fa-desktop" style="font-size:35px;margin-left:15px;margin-top:15px;"></i>
+      <div class="card-body">
+        <div class="card-title"><b>Web Design & Development</b></div>
+        <div class="card-text"><ul>
+          <li>Custom website design tailored to client needs</li>
+          <li>Responsive and mobile-friendly website layouts</li>
+            <li>Landing page design for marketing campaigns</li>
+            </ul>
+        </div>
+      </div>
+    </div>
+</div>
+
+    <div class="col-md-4">
+    <div class="card mt-3" id="two">
+      <i class="fa-solid fa-paintbrush" style="font-size:35px;margin-left:15px;margin-top:15px;"></i>
+      <div class="card-body">
+        <div class="card-title"><b>UI Design</b></div>
+        <div class="card-text"><ul>
+          <li>Wireframing and prototyping (using Figma, Adobe XD)</li>
+            <li>User interface (UI) design for websites and web apps</li>
+              <li>User experience (UX) research and usability testing</li>
+              </ul>
+            </div>
+          </div>
+      </div>
+  </div>
+
+  <div class="col-md-4">
+    <div class="card mt-3" id="three">
+      <i class="fa-solid fa-gear" style="font-size:35px;margin-left:15px;margin-top:15px;"></i>
+      <div class="card-body">
+        <div class="card-title"><b>WordPress Development</b></div>
+        <div class="card-text"><ul>
+          <li>Customizing WordPress themes to match brand identity</li>
+            <li>Setting up and maintaining WordPress sites</li>
+              <li>Plugin installation and optimization for easy to use</li>
+              </ul>
+        </div>
+
+
+     </div>
+      </div>
+  </div>
+</div>
+</div>
+
+<div id="project">
+  <h1 class="text-center mt-5">My <span style="color:orange;">Works</span></h1>
+  <div class="row">
+  <div class="col-md-12">
+  <ul class="nav nav-pills" id="myTab">
+  <li class="nav-item">
+    <a class="nav-link active"  href="#temp" style="font-size:15px;text-align:center">Website Templates</a></li>
+   <li class="nav-item">
+   <a  class="nav-link"  href="#app" style="font-size:15px;text-align:center">UI/UX Design</a></li>
+   <li class="nav-item">
+  <a  class="nav-link"  href="#hcj" style="font-size:15px;text-align:center">HTML CSS & JAVASCRIPT</a></li>
+  <li class="nav-item">
+ <a  class="nav-link"  href="#word" style="font-size:15px;text-align:center">Wordpress Themes</a></li>
+  </ul>
+  </div>
+
+  <div class="col-md-12">
+  	<div class="tab-content py-3" id="vtab">
+    <div class="tab-pane fade show active" id="temp">
+
+  	  <div class="row">
+    <div class="col-md-6">
+      <div class="card mb-3" id="sea">
+      <a href="https://www.figma.com/design/uFUAXo48cikvm2FQ5mIEjK/paint?node-id=0-1&p=f&t=J1BdOWwUkoOq2KFn-0"><img src="paint.png" class="card-img-top" height="400px"></a>
+
+    </div>
+  </div>
+
+  <div class="col-md-6">
+    <div class="card mb-3" id="sea">
+    <a href="https://www.figma.com/design/R79H2DVoOIuMpJGksCkHh5/food-store?t=J1BdOWwUkoOq2KFn-0"><img src="veg.png" class="card-img-top" height="400px"></a>
+
+  </div>
+  </div>
+  </div>
+
+  <div class="row">
+  <div class="col-md-6">
+    <div class="card mb-3" id="sea">
+    <a href="https://www.figma.com/design/riYQyLzTsGHPEN4GR4LpIZ/eclass?t=J1BdOWwUkoOq2KFn-0"><img src="eclass.png" class="card-img-top" height="400px"></a>
+</div>
+</div>
+<div class="col-md-6">
+  <div class="card mb-3" id="sea">
+  <a href="file:///C:/Users/sneha/OneDrive/Documents/New%20folder/snehal/Portfolio/godrej%20company/home.html"><img src="god.png" class="card-img-top" height="400px"></a>
+</div>
+</div>
+</div>
+</div>
+
+  <div class="tab-pane fade" id="app">
+    <div class="row">
+    <div class="col-md-6">
+    <div class="card mb-3" id="sea">
+    <a href="https://www.figma.com/design/aRgBR2HrJjyGUKC5g547g4/Untitled?t=J1BdOWwUkoOq2KFn-0"><img src="fitness.png" class="card-img-top" height="360px"></a>
+    </div>
+    </div>
+
+    <div class="col-md-6">
+    <div class="card mb-3" id="sea">
+    <a href="https://www.figma.com/design/mUsd4nGF3zhqyE8ufcFIj1/Untitled?node-id=1-2&t=nk5GbA1kUlYof66z-0"><img src="bank.png" class="card-img-top" height="360px"></a>
+      </div>
+    </div>
+    </div>
+
+    <div class="row">
+  <div class="col-md-6">
+    <div class="card mb-3" id="sea">
+    <a href="https://www.figma.com/design/kkeBtgo15u7xoDYEjI6ZgP/Untitled?node-id=0-1&p=f&t=9rtybT6kZq5t1Q9F-0"><img src="icream.png" class="card-img-top" height="450px"></a>
+
+  </div>
+  </div>
+
+
+  </div>
+  </div>
+
+
+  <div class="tab-pane fade" id="hcj">
+    <div class="row">
+    <div class="col-md-6">
+    <div class="card mb-4" id="sea">
+    <a href="file:///C:/Users/sneha/OneDrive/Documents/New%20folder/snehal/HTMLCSS/form.html"><img src="form.png" class="card-img-top" height="360px"></a>
+    </div>
+    </div>
+    <div class="col-md-6">
+    <div class="card mb-3" id="sea">
+    <a href="file:///C:/Users/sneha/OneDrive/Documents/New%20folder/snehal/HTMLCSS/navbars.html#"><img src="accoridian.png" class="card-img-top" height="360px"></a>
+    </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+    <div class="card mb-3" id="sea">
+    <a href="file:///C:/Users/sneha/OneDrive/Documents/New%20folder/snehal/Portfolio/colorpale.html"><img src="colorp.png" class="card-img-top" height="360px"></a>
+   </div>
+   </div>
+
+   <div class="col-md-6">
+  <div class="card mb-3" id="sea">
+  <a href="file:///C:/Users/sneha/OneDrive/Documents/New%20folder/snehal/Portfolio/imageeffect.html"><img src="slide.png" class="card-img-top" height="360px"></a>
+  </div>
+  </div>
+</div>
+
+<div class="row">
+<div class="col-md-6">
+<div class="card mb-4" id="sea">
+<a href="file:///C:/Users/sneha/OneDrive/Documents/New%20folder/snehal/Portfolio/anlogc.html"><img src="clock.png" class="card-img-top" height="360px"></a>
+</div>
+</div>
+<div class="col-md-6">
+<div class="card mb-3" id="sea">
+<a href="file:///C:/Users/sneha/OneDrive/Documents/New%20folder/snehal/Portfolio/calculator.html"><img src="calsi.png" class="card-img-top" height="360px"></a>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-6">
+<div class="card mb-3" id="sea">
+<a href="file:///C:/Users/sneha/OneDrive/Documents/snehal/JavaScript/gradientbg.html"><img src="gra.png" class="card-img-top" height="360px"></a>
+</div>
+</div>
+
+<div class="col-md-6">
+<div class="card mb-3" id="sea">
+<a href="file:///C:/Users/sneha/OneDrive/Documents/New%20folder/snehal/Portfolio/musicplayer.html"><img src="music.png" class="card-img-top" height="360px"></a>
+</div>
+</div>
+</div>
+</div>
+
+<div class="tab-pane fade" id="word">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="card mb-3" id="sea">
+      <a href="http://localhost/tour/wordpress/"><img src="mh.png" class="card-img-top" height="360px"></a>
+      </div>
+    </diV>
+    <div class="col-md-6">
+      <div class="card mb-3" id="sea">
+      <a href="http://localhost/ecommerce/wordpress/"><img src="shop.png" class="card-img-top" height="360px"></a>
+      </div>
+    </diV>
+  </div>
+</div>
+  </div>
+
+  </div>
+  </div>
+  </div>
+
+  <div id="contact">
+  <h1 class="text-center">Contact <span style="color:orange;">Me</span></h1>
+  <div class="row">
+  <div class="col-md-6">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3781.474327172616!2d73.77145107911424!3d18.597723437416285!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2b91d43e639d1%3A0x629da5889ff6741b!2sVardhaman%20Dreams%20Phase%20II!5e0!3m2!1sen!2sin!4v1743663950565!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </div>
+<div class="col-md-6">
+  <h2 class="text-center mt-5">Snehal Kunturkar</h2>
+  <h5 class="text-center">Mobile No.9890975671</h5>
+  <h6 class="text-center">E-mail. snehal.phutane46@gmail.com</h6>
+
+</div>
+  </div>
+
+  </div>
+
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script type="text/javascript">
+    const themeToggle = document.getElementById('theme-toggle');
+
+themeToggle.addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
+});
+
+
+
+    </script>
+</body>
+</html>

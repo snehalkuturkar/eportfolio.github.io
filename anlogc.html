@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1,shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css\fontawesome.css">
+	 <link rel="stylesheet" href="css\brands.css">
+
+   <link rel="stylesheet" href="bootstrap.css">
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<head>
+<style type="text/css">
+*
+{
+margin:0px;
+padding:0px;
+box-sizing:border-box;
+font-family:arial;
+}
+:root{
+  --primary-color:#f6f7fb;
+  --white-color:#ffffff;
+  --black-color:#18191a;
+  --red-color:#e74c3c;
+}
+body
+{
+	display:flex;
+	align-items:center;
+	justify-content:center;
+	background-color:var(--primary-color);
+	margin-top:50px;
+}
+
+.dark{
+  --primary-color:#242526;
+  --white-color:#18191a;
+  --black-color:#fff;
+  --red-color:#e74c3c;
+}
+
+ .clock
+{
+	height:400px;
+	width:400px;
+	display:flex;
+	align-items:center;
+	justify-content:center;
+	border-radius:50%;
+	background-color:var(--white-color);
+	box-shadow:0 15px 25px rgba(0,0,0,0.1), 0 25px 45px rgba(0,0,0,0.1);
+    position:relative;
+}
+
+
+
+.clock label
+{
+	position:absolute;
+	inset:20px;
+	text-align:center;
+	transform:rotate(calc(var(--i)*(360deg/12)));
+}
+.clock label span
+{
+	display:inline-block;
+	font-size:30px;
+	font-weight:600;
+	color:var(--black-color);
+	transform:rotate(calc(var(--i)*(-360deg/12)));
+}
+
+
+
+.indicator
+{
+position:absolute;
+height:10px;
+width:10px;
+display:flex;
+justify-content:center;
+border-radius:50%;
+background-color:var(--black-color);
+border:4px solid red;
+}
+
+.indicator #hand-sec
+{
+	position:absolute;
+	height:130px;
+	width:4px;
+	bottom:0;
+	border-radius:25px;
+	transform-origin:bottom;
+	background-color:var(--red-color);
+}
+
+.indicator #hand-min
+{
+    position:absolute;
+	height:150px;
+	width:5px;
+	bottom:0;
+	border-radius:20px;
+	transform-origin:bottom;
+	background-color:var(--black-color);
+}
+
+
+.indicator #hand-hour
+{
+    position:absolute;
+	height:100px;
+	width:6px;
+	bottom:0;
+	border-radius:20px;
+	transform-origin:bottom;
+	background-color:var(--black-color);
+}
+
+
+
+
+</style>
+
+
+
+
+</head>
+
+<body>
+<div class="main">
+<h1 class="text-center text-secondary"><b>Analog Clock</b></h1>
+<div class="clock">
+<label style="--i:1"><span>1</span></label>
+<label style="--i:2"><span>2</span></label>
+<label style="--i:3"><span>3</span></label>
+<label style="--i:4"><span>4</span></label>
+<label style="--i:5"><span>5</span></label>
+<label style="--i:6"><span>6</span></label>
+<label style="--i:7"><span>7</span></label>
+<label style="--i:8"><span>8</span></label>
+<label style="--i:9"><span>9</span></label>
+<label style="--i:10"><span>10</span></label>
+<label style="--i:11"><span>11</span></label>
+<label style="--i:12"><span>12</span></label>
+
+<div class="indicator">
+<span onload="clock()" id="hand-hour"></span>
+<span onload="clock()" id="hand-min"></span>
+<span onload="clock()" id="hand-sec"></span>
+</div>
+</div>
+<button class="btn btn-primary btn-block mt-4" onclick="mode()" >Toggle Mode</button>
+
+</div>
+
+
+
+</body>
+<script type="text/Javascript">
+var tim = setInterval(clock);
+
+function clock()
+{
+    var date= new Date();
+	var hour = date.getHours();
+	var min = date.getMinutes();
+	var sec = date.getSeconds();
+
+
+document.getElementById("hand-hour").style.transform = "rotate("+ hour * 30 + "deg)";
+document.getElementById("hand-min").style.transform = "rotate("+ min * 6 + "deg)";
+document.getElementById("hand-sec").style.transform = "rotate("+ sec * 6 + "deg)";
+}
+
+function mode()
+{
+var a=document.body;
+a.classList.toggle("dark");
+
+}
+
+
+
+</script>
+</html>
